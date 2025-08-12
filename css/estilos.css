@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 main .hero {
   width: 100%;
   padding: 50px 20px;
@@ -16,15 +26,31 @@ main .hero p {
   font-size: 20px;
   margin-bottom: 30px;
 }
-main .productos-destacados h2 {
-  font-size: 28px;
+main .productos-destacados div {
+  background-image: url(../img/dragon_color_shift.gif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  margin: 20px auto;
+}
+main .productos-destacados div h2 {
+  font-size: 30px;
   margin-bottom: 20px;
   color: white;
   text-align: center;
 }
-main .productos-destacados section {
-  display: inline-flex;
-  flex-wrap: wrap;
+main .productos-destacados .containerdest {
+  display: grid;
+  grid-template-columns: 3, 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "des1 des2 des3" "des4 des5 des6";
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+main .productos-destacados .containerdest [class^=des] {
   justify-content: center;
   gap: 30px;
   width: 300px;
@@ -32,29 +58,28 @@ main .productos-destacados section {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  margin: 20px auto;
 }
-main .productos-destacados section img {
+main .productos-destacados .containerdest [class^=des] img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-main .productos-destacados section h3 {
+main .productos-destacados .containerdest [class^=des] h3 {
   font-size: 20px;
   margin-top: 10px;
 }
-main .productos-destacados section p {
+main .productos-destacados .containerdest [class^=des] p {
   font-size: 16px;
   margin-top: 5px;
 }
-main .productos-destacados section span {
+main .productos-destacados .containerdest [class^=des] span {
   font-size: 18px;
   color: rgb(0, 0, 0);
   margin-top: 10px;
   display: block;
   font-weight: bold;
 }
-main .productos-destacados section button {
+main .productos-destacados .containerdest [class^=des] button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #00b7ff;
@@ -63,36 +88,19 @@ main .productos-destacados section button {
   border-radius: 5px;
   cursor: pointer;
 }
-main .productos-destacados section button:hover {
+main .productos-destacados .containerdest [class^=des] button:hover {
   background-color: #0056b3;
-}
-main .figuras {
-  background-image: url(../img/banner1.png);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 50px 20px;
-  color: white;
-}
-main .figuras h2 {
-  font-size: 28px;
-  text-align: center;
-}
-main .figuras p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  text-align: center;
 }
 main .gridcontainer {
   display: grid;
   grid-template-columns: 3, 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "seccion1 section2 seccion3" "seccion4 section5 section6" "seccion7 section8 section9" "seccion10 seccion11 seccion12";
+  grid-template-areas: "panel1 panel2 panel3" "panel4 panel5 panel6" "panel7 panel8 panel9" "panel10 panel11 panel12";
   gap: 20px;
   width: 80%;
   margin: 20px auto;
 }
-main .gridcontainer [class^=seccion] {
+main .gridcontainer [class^=panel] {
   justify-content: center;
   gap: 30px;
   width: 300px;
@@ -101,27 +109,27 @@ main .gridcontainer [class^=seccion] {
   padding: 20px;
   text-align: center;
 }
-main .gridcontainer [class^=seccion] img {
+main .gridcontainer [class^=panel] img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-main .gridcontainer [class^=seccion] h3 {
+main .gridcontainer [class^=panel] h3 {
   font-size: 20px;
   margin-top: 10px;
 }
-main .gridcontainer [class^=seccion] p {
+main .gridcontainer [class^=panel] p {
   font-size: 16px;
   margin-top: 5px;
 }
-main .gridcontainer [class^=seccion] span {
+main .gridcontainer [class^=panel] span {
   font-size: 18px;
   color: rgb(0, 0, 0);
   margin-top: 10px;
   display: block;
   font-weight: bold;
 }
-main .gridcontainer [class^=seccion] button {
+main .gridcontainer [class^=panel] button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #00b7ff;
@@ -130,7 +138,7 @@ main .gridcontainer [class^=seccion] button {
   border-radius: 5px;
   cursor: pointer;
 }
-main .gridcontainer [class^=seccion] button:hover {
+main .gridcontainer [class^=panel] button:hover {
   background-color: #0056b3;
 }
 

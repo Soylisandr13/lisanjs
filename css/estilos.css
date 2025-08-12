@@ -26,7 +26,8 @@ main .hero p {
   font-size: 20px;
   margin-bottom: 30px;
 }
-main .productos-destacados div {
+
+main .productos-destacados section {
   background-image: url(../img/dragon_color_shift.gif);
   background-size: cover;
   background-position: center;
@@ -35,13 +36,13 @@ main .productos-destacados div {
   margin-bottom: 20px;
   margin: 20px auto;
 }
-main .productos-destacados div h2 {
+main .productos-destacados h2 {
   font-size: 30px;
   margin-bottom: 20px;
   color: white;
   text-align: center;
 }
-main .productos-destacados .containerdest {
+main .containerdest {
   display: grid;
   grid-template-columns: 3, 1fr;
   grid-template-rows: auto;
@@ -50,7 +51,8 @@ main .productos-destacados .containerdest {
   width: 80%;
   margin: 20px auto;
 }
-main .productos-destacados .containerdest [class^=des] {
+main .containerdest [class^=des] {
+  background-color: white;
   justify-content: center;
   gap: 30px;
   width: 300px;
@@ -59,27 +61,28 @@ main .productos-destacados .containerdest [class^=des] {
   padding: 20px;
   text-align: center;
 }
-main .productos-destacados .containerdest [class^=des] img {
+main .containerdest [class^=des] img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-main .productos-destacados .containerdest [class^=des] h3 {
+main .containerdest [class^=des] h3 {
   font-size: 20px;
   margin-top: 10px;
 }
-main .productos-destacados .containerdest [class^=des] p {
+main .containerdest [class^=des] p {
   font-size: 16px;
   margin-top: 5px;
+  color: black;
 }
-main .productos-destacados .containerdest [class^=des] span {
+main .containerdest [class^=des] span {
   font-size: 18px;
   color: rgb(0, 0, 0);
   margin-top: 10px;
   display: block;
   font-weight: bold;
 }
-main .productos-destacados .containerdest [class^=des] button {
+main .containerdest [class^=des] button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #00b7ff;
@@ -88,10 +91,33 @@ main .productos-destacados .containerdest [class^=des] button {
   border-radius: 5px;
   cursor: pointer;
 }
-main .productos-destacados .containerdest [class^=des] button:hover {
+main .containerdest [class^=des] button:hover {
   background-color: #0056b3;
 }
-main .gridcontainer {
+
+main .figuras {
+  background-image: url(/img/banner1.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  margin: 20px auto;
+}
+main h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+main p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+}
+
+.gridcontainer {
   display: grid;
   grid-template-columns: 3, 1fr;
   grid-template-rows: auto;
@@ -100,7 +126,7 @@ main .gridcontainer {
   width: 80%;
   margin: 20px auto;
 }
-main .gridcontainer [class^=panel] {
+.gridcontainer [class^=panel] {
   justify-content: center;
   gap: 30px;
   width: 300px;
@@ -109,27 +135,28 @@ main .gridcontainer [class^=panel] {
   padding: 20px;
   text-align: center;
 }
-main .gridcontainer [class^=panel] img {
+.gridcontainer [class^=panel] img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-main .gridcontainer [class^=panel] h3 {
+.gridcontainer [class^=panel] h3 {
   font-size: 20px;
   margin-top: 10px;
 }
-main .gridcontainer [class^=panel] p {
+.gridcontainer [class^=panel] p {
   font-size: 16px;
   margin-top: 5px;
+  color: black;
 }
-main .gridcontainer [class^=panel] span {
+.gridcontainer [class^=panel] span {
   font-size: 18px;
   color: rgb(0, 0, 0);
   margin-top: 10px;
   display: block;
   font-weight: bold;
 }
-main .gridcontainer [class^=panel] button {
+.gridcontainer [class^=panel] button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #00b7ff;
@@ -137,8 +164,9 @@ main .gridcontainer [class^=panel] button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: auto;
 }
-main .gridcontainer [class^=panel] button:hover {
+.gridcontainer [class^=panel] button:hover {
   background-color: #0056b3;
 }
 
@@ -158,6 +186,102 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
+}
+
+.carrito-fijo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.carrito-fijo .carrito-icono {
+  width: 50px;
+  height: 50px;
+  background: #00b7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.carrito-fijo .carrito-icono:hover {
+  transform: scale(1.1);
+  background: #0056b3;
+}
+.carrito-fijo .carrito-contenido {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+  width: 250px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: none;
+}
+.carrito-fijo .carrito-contenido h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.carrito-fijo .carrito-contenido .carrito-items {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.carrito-fijo .carrito-contenido .carrito-items .carrito-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.carrito-fijo .carrito-contenido .carrito-items .carrito-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.carrito-fijo .carrito-contenido .carrito-items .carrito-item div {
+  flex: 1;
+}
+.carrito-fijo .carrito-contenido .carrito-items .carrito-item div h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.carrito-fijo .carrito-contenido .carrito-items .carrito-item div p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+.carrito-fijo .carrito-contenido .carrito-total {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.carrito-fijo .carrito-contenido button {
+  width: 100%;
+  padding: 8px;
+  background: #00b7ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.carrito-fijo .carrito-contenido button:hover {
+  background: #0099e0;
+}
+.carrito-fijo.activo .carrito-contenido {
+  display: block;
 }
 
 /*# sourceMappingURL=estilos.css.map */

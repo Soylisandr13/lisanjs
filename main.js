@@ -5,5 +5,5 @@ if (edad >= 18) {
     alert("¡Bienvenido!");
 }else {
     console.log("Eres menor de edad");
-    alert("Eres menor de edad");
-}
+    alert("Vuelve más tarde");
+ document.body.innerHTML = "<h1>Acceso denegado</h1><p>Debes ser mayor de edad para ingresar.</p>";}

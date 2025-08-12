@@ -1,0 +1,155 @@
+main .hero {
+  width: 100%;
+  padding: 50px 20px;
+  background-image: url(../img/banner1.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
+}
+main .hero h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+main .hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+main .productos-destacados h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+main .productos-destacados section {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+}
+main .productos-destacados section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+main .productos-destacados section h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+main .productos-destacados section p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+main .productos-destacados section span {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+}
+main .productos-destacados section button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #00b7ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .productos-destacados section button:hover {
+  background-color: #0056b3;
+}
+main .figuras {
+  background-image: url(../img/banner1.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 20px;
+  color: white;
+}
+main .figuras h2 {
+  font-size: 28px;
+  text-align: center;
+}
+main .figuras p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+main .gridcontainer {
+  display: grid;
+  grid-template-columns: 3, 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "seccion1 section2 seccion3" "seccion4 section5 section6" "seccion7 section8 section9" "seccion10 seccion11 seccion12";
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+main .gridcontainer [class^=seccion] {
+  justify-content: center;
+  gap: 30px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+main .gridcontainer [class^=seccion] img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+main .gridcontainer [class^=seccion] h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+main .gridcontainer [class^=seccion] p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+main .gridcontainer [class^=seccion] span {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+}
+main .gridcontainer [class^=seccion] button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #00b7ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .gridcontainer [class^=seccion] button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-image: url(../img/banner1.png);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+footer a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=estilos.css.map */

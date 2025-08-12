@@ -1,0 +1,17 @@
+main .hero {
+  width: 100%;
+  padding: 50px 20px;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+main .hero h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+main .hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}

@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -26,7 +28,6 @@ main .hero p {
   font-size: 20px;
   margin-bottom: 30px;
 }
-
 main .productos-destacados section {
   background-image: url(../img/dragon_color_shift.gif);
   background-size: cover;
@@ -44,12 +45,30 @@ main .productos-destacados h2 {
 }
 main .containerdest {
   display: grid;
-  grid-template-columns: 3, 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-template-areas: "des1 des2 des3" "des4 des5 des6";
   gap: 20px;
   width: 80%;
   margin: 20px auto;
+}
+main .containerdest .des1 {
+  grid-area: des1;
+}
+main .containerdest .des2 {
+  grid-area: des2;
+}
+main .containerdest .des3 {
+  grid-area: des3;
+}
+main .containerdest .des4 {
+  grid-area: des4;
+}
+main .containerdest .des5 {
+  grid-area: des5;
+}
+main .containerdest .des6 {
+  grid-area: des6;
 }
 main .containerdest [class^=des] {
   background-color: white;
@@ -60,10 +79,15 @@ main .containerdest [class^=des] {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
 }
 main .containerdest [class^=des] img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
 }
 main .containerdest [class^=des] h3 {
@@ -83,7 +107,7 @@ main .containerdest [class^=des] span {
   font-weight: bold;
 }
 main .containerdest [class^=des] button {
-  margin-top: 15px;
+  margin-top: auto;
   padding: 10px 15px;
   background-color: #00b7ff;
   color: white;
@@ -94,12 +118,11 @@ main .containerdest [class^=des] button {
 main .containerdest [class^=des] button:hover {
   background-color: #0056b3;
 }
-
 main .figuras {
-  background-image: url(../img/banner1.png) !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
+  background-image: url(../img/banner1.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 20px 0;
   margin-bottom: 20px;
   margin: 20px auto;
@@ -119,12 +142,48 @@ main .figuras p {
 
 .gridcontainer {
   display: grid;
-  grid-template-columns: 3, 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-template-areas: "panel1 panel2 panel3" "panel4 panel5 panel6" "panel7 panel8 panel9" "panel10 panel11 panel12";
   gap: 20px;
   width: 80%;
   margin: 20px auto;
+}
+.gridcontainer .panel1 {
+  grid-area: panel1;
+}
+.gridcontainer .panel2 {
+  grid-area: panel2;
+}
+.gridcontainer .panel3 {
+  grid-area: panel3;
+}
+.gridcontainer .panel4 {
+  grid-area: panel4;
+}
+.gridcontainer .panel5 {
+  grid-area: panel5;
+}
+.gridcontainer .panel6 {
+  grid-area: panel6;
+}
+.gridcontainer .panel7 {
+  grid-area: panel7;
+}
+.gridcontainer .panel8 {
+  grid-area: panel8;
+}
+.gridcontainer .panel9 {
+  grid-area: panel9;
+}
+.gridcontainer .panel10 {
+  grid-area: panel10;
+}
+.gridcontainer .panel11 {
+  grid-area: panel11;
+}
+.gridcontainer .panel12 {
+  grid-area: panel12;
 }
 .gridcontainer [class^=panel] {
   justify-content: center;
@@ -134,10 +193,15 @@ main .figuras p {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
 }
 .gridcontainer [class^=panel] img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
 }
 .gridcontainer [class^=panel] h3 {
@@ -157,14 +221,13 @@ main .figuras p {
   font-weight: bold;
 }
 .gridcontainer [class^=panel] button {
-  margin-top: 15px;
+  margin-top: auto;
   padding: 10px 15px;
   background-color: #00b7ff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto;
 }
 .gridcontainer [class^=panel] button:hover {
   background-color: #0056b3;
@@ -285,45 +348,97 @@ footer a:hover {
 }
 
 @media (max-width: 1050px) {
-  main .productos-destacados section {
-    padding: 10px 0;
-    margin: 10px auto;
-  }
-  main .productos-destacados section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  main .productos-destacados .containerdest {
+  main .containerdest {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "des1 des2" "des3 des4" "des5 des6";
     width: 95%;
-    gap: 10px;
+    gap: 15px;
   }
-  main .productos-destacados .containerdest [class^=des] {
+  main .containerdest [class^=des] {
     width: 100%;
     max-width: 300px;
-    padding: 10px;
+    padding: 15px;
+    min-height: 420px;
   }
-  main .productos-destacados .containerdest [class^=des] img {
+  main .containerdest [class^=des] img {
     height: 180px;
     object-fit: cover;
   }
-  main .productos-destacados .containerdest [class^=des] h3 {
+  main .containerdest [class^=des] h3 {
     font-size: 16px;
     margin: 5px 0;
   }
-  main .productos-destacados .containerdest [class^=des] p {
+  main .containerdest [class^=des] p {
     font-size: 13px;
     margin: 3px 0;
   }
-  main .productos-destacados .containerdest [class^=des] span {
+  main .containerdest [class^=des] span {
     font-size: 15px;
     margin: 5px 0;
   }
-  main .productos-destacados .containerdest [class^=des] button {
+  main .containerdest [class^=des] button {
     padding: 6px 10px;
     font-size: 13px;
-    margin-top: 8px;
+    margin-top: auto;
+  }
+  .gridcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "panel1 panel2" "panel3 panel4" "panel5 panel6" "panel7 panel8" "panel9 panel10" "panel11 panel12";
+    width: 95%;
+    gap: 15px;
+  }
+  .gridcontainer [class^=panel] {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    min-height: 420px;
+  }
+  .gridcontainer [class^=panel] img {
+    height: 180px;
+    object-fit: cover;
+  }
+  .gridcontainer [class^=panel] h3 {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  .gridcontainer [class^=panel] p {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+  .gridcontainer [class^=panel] span {
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  .gridcontainer [class^=panel] button {
+    padding: 6px 10px;
+    font-size: 13px;
+    margin-top: auto;
+  }
+}
+@media (max-width: 768px) {
+  main .containerdest {
+    grid-template-columns: 1fr;
+    grid-template-areas: "des1" "des2" "des3" "des4" "des5" "des6";
+    width: 90%;
+  }
+  main .containerdest [class^=des] {
+    min-height: 400px;
+  }
+  main .containerdest [class^=des] img {
+    height: 160px;
+    object-fit: cover;
+  }
+  .gridcontainer {
+    grid-template-columns: 1fr;
+    grid-template-areas: "panel1" "panel2" "panel3" "panel4" "panel5" "panel6" "panel7" "panel8" "panel9" "panel10" "panel11" "panel12";
+    width: 90%;
+  }
+  .gridcontainer [class^=panel] {
+    min-height: 400px;
+  }
+  .gridcontainer [class^=panel] img {
+    height: 160px;
+    object-fit: cover;
   }
 }
 

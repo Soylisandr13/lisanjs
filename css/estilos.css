@@ -284,4 +284,47 @@ footer a:hover {
   display: block;
 }
 
+@media (max-width: 1050px) {
+  main .productos-destacados section {
+    padding: 10px 0;
+    margin: 10px auto;
+  }
+  main .productos-destacados section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  main .productos-destacados .containerdest {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "des1 des2" "des3 des4" "des5 des6";
+    width: 95%;
+    gap: 10px;
+  }
+  main .productos-destacados .containerdest [class^=des] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+  }
+  main .productos-destacados .containerdest [class^=des] img {
+    height: 180px;
+    object-fit: cover;
+  }
+  main .productos-destacados .containerdest [class^=des] h3 {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  main .productos-destacados .containerdest [class^=des] p {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+  main .productos-destacados .containerdest [class^=des] span {
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  main .productos-destacados .containerdest [class^=des] button {
+    padding: 6px 10px;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+}
+
 /*# sourceMappingURL=estilos.css.map */

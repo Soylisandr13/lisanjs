@@ -104,13 +104,13 @@ main .figuras {
   margin-bottom: 20px;
   margin: 20px auto;
 }
-main h2 {
+main .figuras h2 {
   font-size: 30px;
   margin-bottom: 20px;
   color: white;
   text-align: center;
 }
-main p {
+main .figuras p {
   font-size: 16px;
   margin-bottom: 10px;
   color: white;

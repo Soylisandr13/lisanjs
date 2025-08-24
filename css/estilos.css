@@ -96,10 +96,10 @@ main .containerdest [class^=des] button:hover {
 }
 
 main .figuras {
-  background-image: url(/img/dragon_color_shift.gif);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: url(../img/banner1.png) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
   padding: 20px 0;
   margin-bottom: 20px;
   margin: 20px auto;

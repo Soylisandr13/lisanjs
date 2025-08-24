@@ -141,6 +141,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    let descuentoAplicado = 0;
+    const CODIGO_DESCUENTO = "DRAGONBALLSUPER";
+    const PORCENTAJE_DESCUENTO = 30;
+
+
+    if (!sessionStorage.getItem('notificacionMostrada')) {
+        Swal.fire({
+            title: '¡Oferta especial!',
+            text: 'Usando este código de descuento 30% de descuento en tu primera compra. Codigo: DRAGONBALLSUPER',
+            icon: 'success',
+            confirmButtonText: '¡Gracias!',
+            confirmButtonColor: '#00b7ff',
+            timer: 8000,
+            timerProgressBar: true
+        });
+        sessionStorage.setItem('notificacionMostrada', 'true');
+    }
+
     const contenedorDestacados = document.querySelector('.containerdest');
     contenedorDestacados.innerHTML = '';
     productos.slice(0, 6).forEach(producto => {
@@ -174,12 +192,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    descuentoAplicado = parseInt(localStorage.getItem('descuentoAplicado')) || 0;
     const carritoItems = document.querySelector('.carrito-items');
     const totalPrecio = document.querySelector('.carrito-total span');
     const botonPagar = document.getElementById('checkout');
 
     function guardarCarrito() {
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem('descuentoAplicado', descuentoAplicado);
     }
 
     function mostrarNotificacion() {
@@ -271,10 +291,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     carritoItems.appendChild(itemElement);
                 });
+                let totalConDescuento = total;
+                if (descuentoAplicado > 0) {
+                    totalConDescuento = total - (total * descuentoAplicado / 100);
+                }
+
+                const descuentoSection = document.createElement('div');
+                descuentoSection.className = 'carrito-descuento';
+                descuentoSection.innerHTML = `
+                    <div class="descuento-input">
+                        <input type="text" id="codigo-descuento" placeholder="Código de descuento">
+                        <button id="aplicar-descuento">Aplicar</button>
+                    </div>
+                    <div class="descuento-info">
+                        ${descuentoAplicado > 0 ? 
+                            `<p>Descuento aplicado: ${descuentoAplicado}%</p>
+                             <p>Total original: $${total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>` : 
+                            ''}
+                    </div>
+                `;
+                
+                carritoItems.appendChild(descuentoSection);
                 
                 if (totalPrecio) {
-                    totalPrecio.textContent = `$${total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+                    totalPrecio.textContent = `$${totalConDescuento.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
                 }
+                document.getElementById('aplicar-descuento').addEventListener('click', function() {
+                    const codigoIngresado = document.getElementById('codigo-descuento').value.toUpperCase();
+                    aplicarDescuento(codigoIngresado);
+                });
             }
         }
     }
@@ -282,6 +327,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function eliminarDelCarrito(id) {
         const producto = carrito.find(item => item.id === id);
         carrito = carrito.filter(item => item.id !== id);
+        if (carrito.length === 0) {
+            descuentoAplicado = 0;
+            localStorage.setItem('descuentoAplicado', 0);
+        }
+        
         guardarCarrito();
         actualizarCarrito();
         carritoFijo.classList.add('activo');
@@ -299,6 +349,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 carritoFijo.classList.add('activo');
             }
         }
+    }
+
+    function aplicarDescuento(codigo) {
+        if (codigo === CODIGO_DESCUENTO) {
+            descuentoAplicado = PORCENTAJE_DESCUENTO;
+            Swal.fire({
+                title: '¡Código válido!',
+                text: `Se ha aplicado un ${PORCENTAJE_DESCUENTO}% de descuento a tu compra.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#00b7ff'
+            });
+        } else {
+            Swal.fire({
+                title: 'Código inválido',
+                text: 'El código ingresado no es válido. Por favor, intenta de nuevo.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#00b7ff'
+            });
+        }
+        localStorage.setItem('descuentoAplicado', descuentoAplicado);
+        
+        actualizarCarrito();
     }
 
     if (carritoItems) {

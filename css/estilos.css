@@ -347,6 +347,51 @@ footer a:hover {
   display: block;
 }
 
+.carrito-descuento {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+.carrito-descuento .descuento-input {
+  display: flex;
+  margin-bottom: 10px;
+}
+.carrito-descuento .descuento-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+.carrito-descuento .descuento-input input:focus {
+  outline: none;
+  border-color: #00b7ff;
+}
+.carrito-descuento .descuento-input button {
+  padding: 8px 12px;
+  background-color: #00b7ff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.carrito-descuento .descuento-input button:hover {
+  background-color: #0056b3;
+}
+.carrito-descuento .descuento-info {
+  font-size: 14px;
+  color: #666;
+}
+.carrito-descuento .descuento-info p {
+  margin: 5px 0;
+}
+.carrito-descuento .descuento-info p:first-child {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
 @media (max-width: 1050px) {
   main .containerdest {
     grid-template-columns: repeat(2, 1fr);

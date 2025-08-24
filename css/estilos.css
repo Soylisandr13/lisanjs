@@ -116,7 +116,8 @@ main p {
   color: white;
   text-align: center;
 }
-main .gridcontainer {
+
+.gridcontainer {
   display: grid;
   grid-template-columns: 3, 1fr;
   grid-template-rows: auto;
@@ -125,7 +126,7 @@ main .gridcontainer {
   width: 80%;
   margin: 20px auto;
 }
-main .gridcontainer [class^=panel] {
+.gridcontainer [class^=panel] {
   justify-content: center;
   gap: 30px;
   width: 300px;
@@ -134,28 +135,28 @@ main .gridcontainer [class^=panel] {
   padding: 20px;
   text-align: center;
 }
-main .gridcontainer [class^=panel] img {
+.gridcontainer [class^=panel] img {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
-main .gridcontainer [class^=panel] h3 {
+.gridcontainer [class^=panel] h3 {
   font-size: 20px;
   margin-top: 10px;
 }
-main .gridcontainer [class^=panel] p {
+.gridcontainer [class^=panel] p {
   font-size: 16px;
   margin-top: 5px;
   color: black;
 }
-main .gridcontainer [class^=panel] span {
+.gridcontainer [class^=panel] span {
   font-size: 18px;
   color: rgb(0, 0, 0);
   margin-top: 10px;
   display: block;
   font-weight: bold;
 }
-main .gridcontainer [class^=panel] button {
+.gridcontainer [class^=panel] button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #00b7ff;
@@ -165,7 +166,7 @@ main .gridcontainer [class^=panel] button {
   cursor: pointer;
   margin-top: auto;
 }
-main .gridcontainer [class^=panel] button:hover {
+.gridcontainer [class^=panel] button:hover {
   background-color: #0056b3;
 }
 
